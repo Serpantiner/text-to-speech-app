@@ -61,7 +61,7 @@ def text_to_speech(text, lang, output_file):
         voice = texttospeech.VoiceSelectionParams(
             language_code=lang,
             name='en-US-Studio-M',  # Using a premium English Studio voice
-            ssml_gender=texttospeech.SsmlVoiceGender.MALE  # Or FEMALE based on preference and availability
+            ssml_gender=texttospeech.SsmlVoiceGender.MALE  
         )
         audio_config = texttospeech.AudioConfig(
             audio_encoding=texttospeech.AudioEncoding.LINEAR16
@@ -88,10 +88,7 @@ def text_to_speech(text, lang, output_file):
     logging.info(f'Audio content written to file "{output_file}"')
 
 if __name__ == "__main__":
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.expanduser("~/Downloads/iconic-nimbus-423809-n0-835c178ffdfb.json")
-    
-    pdf_file_path = os.path.expanduser('~/Downloads/4 (1)-4.pdf')
-    pdf_text = read_pdf(pdf_file_path)
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"]
 
     lang = 'en-US' 
 

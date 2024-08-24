@@ -4,7 +4,6 @@ from google.cloud import texttospeech
 import PyPDF2
 from pydub import AudioSegment
 
-# Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def read_pdf(file_path):
@@ -89,14 +88,12 @@ def text_to_speech(text, lang, output_file):
     logging.info(f'Audio content written to file "{output_file}"')
 
 if __name__ == "__main__":
-    # Set the environment variable for Google Cloud credentials
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.expanduser("~/Downloads/iconic-nimbus-423809-n0-835c178ffdfb.json")
     
     pdf_file_path = os.path.expanduser('~/Downloads/4 (1)-4.pdf')
     pdf_text = read_pdf(pdf_file_path)
 
-    # Detect language (simplistic approach)
-    lang = 'en-US'  # English language
+    lang = 'en-US' 
 
     output_file = 'output.wav'
     text_to_speech(pdf_text, lang, output_file)
